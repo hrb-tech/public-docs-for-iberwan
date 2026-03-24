@@ -91,4 +91,4 @@ No canto inferior direito, você encontrará os botões de ação:
     - **Manuais:** Acesso rápido aos manuais do usuário e do administrador.
 
 ## 6. Campos somente de leitura
-Todos os campos que possuem cor de fundo amarela não podem ser editados. Sãoa campos somente de leitura. 
+Todos os campos que possuem cor de fundo amarela não podem ser editados. São campos somente de leitura. 
