@@ -12,6 +12,7 @@ Bem-vindo ao **IwQuotation**, uma aplicação de página única (SPA - Simgle Pa
     - [4.3 Inserindo Cotações de Itens](#43-inserindo-cotações-de-itens)
     - [4.4 Salvando e Finalizando](#44-salvando-e-finalizando)
 5. [Recursos Adicionais](#5-recursos-adicionais)
+6. [Campos Somente de Leitura](#6-campos-somente-de-leitura)
 
 ---
 
@@ -88,3 +89,6 @@ No canto inferior direito, você encontrará os botões de ação:
     - **Logout:** Encerra sua sessão com segurança.
     - **Sobre:** Visualize informações da versão.
     - **Manuais:** Acesso rápido aos manuais do usuário e do administrador.
+
+## 6. Campos somente de leitura
+Todos os campos que possuem cor de fundo amarela não podem ser editados. Sãoa campos somente de leitura. 
