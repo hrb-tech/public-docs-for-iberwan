@@ -92,3 +92,17 @@ No canto inferior direito, você encontrará os botões de ação:
 
 ## 6. Campos somente de leitura
 Todos os campos que possuem cor de fundo amarela não podem ser editados. São campos somente de leitura. 
+
+### 7.1 Usuários Fornecedores (Provedores de Material)
+Cada provedor de material (ex.: CEI, DIPROMED) requer pelo menos uma conta de usuário dedicada.
+- **Cadastro:** Esses usuários devem ser definidos na tabela `GLBPERSON` e associados a um registro `GLBUSER`, seguindo os procedimentos padrão do Sistema IwCare.
+- **Associação:** Na tabela `GLBENTERPRISE`, associe a empresa/fornecedor específica à conta de usuário pretendida para o login.
+- **Controle de Acesso:** Esta configuração garante que os fornecedores possam acessar apenas os Mapas de Cotação especificamente atribuídos a eles.
+
+### 7.2 Usuário de Serviço do Sistema ("Incoway")
+Um usuário interno do sistema chamado **"Incoway"** é necessário para operações de backend. Este usuário atua como uma conta de serviço para facilitar a recuperação e persistência de dados.
+- **Configuração de Senha:** A senha para este usuário deve ser fornecida ao servidor de aplicação (Wildfly 20) como um parâmetro JVM.
+- **Métodos de Configuração:**
+    - **Arquivo de Configuração:** Adicione a propriedade `IncowayPw` ao arquivo de configuração XML do Wildfly.
+    - **Linha de Comando:** Inicie a JVM com o parâmetro: `-DIncowayPw=sua_senha`.
+- **Finalidade:** Esta conta é essencial para a lógica interna da aplicação, suportando toda a busca de dados da interface e salvando as informações inseridas pelos fornecedores logados.
