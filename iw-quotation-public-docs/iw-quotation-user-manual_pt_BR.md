@@ -94,15 +94,16 @@ No canto inferior direito, você encontrará os botões de ação:
 Todos os campos que possuem cor de fundo amarela não podem ser editados. São campos somente de leitura. 
 
 ### 7.1 Usuários Fornecedores (Provedores de Material)
-Cada provedor de material (ex.: CEI, DIPROMED) requer pelo menos uma conta de usuário dedicada.
-- **Cadastro:** Esses usuários devem ser definidos na tabela `GLBPERSON` e associados a um registro `GLBUSER`, seguindo os procedimentos padrão do Sistema IwCare.
+Cada provedor de material (ex.: CEI, DIPROMED, etc) requer pelo menos uma conta de usuário dedicada.
+- **Cadastro:** Esses usuários devem ser definidos na tabela `GLBPERSON` e associados a um registro `GLBUSER`, seguindo o procedimento padrão do Sistema IwCare.
 - **Associação:** Na tabela `GLBENTERPRISE`, associe a empresa/fornecedor específica à conta de usuário pretendida para o login.
-- **Controle de Acesso:** Esta configuração garante que os fornecedores possam acessar apenas os Mapas de Cotação especificamente atribuídos a eles.
+Essa associação é feita usando o proprio sistema IwCare (Client java), usando prodemento padrão do IwCare para essa associação.
+- **Controle de Acesso:** Esta configuração garante que os fornecedores possam acessar apenas os Mapas de Cotação especificamente atribuídos a eles ( ou seja, mapas de cotações onde as empresas associadas ao usuário participam).
 
 ### 7.2 Usuário de Serviço do Sistema ("Incoway")
 Um usuário interno do sistema chamado **"Incoway"** é necessário para operações de backend. Este usuário atua como uma conta de serviço para facilitar a recuperação e persistência de dados.
-- **Configuração de Senha:** A senha para este usuário deve ser fornecida ao servidor de aplicação (Wildfly 20) como um parâmetro JVM.
+- **Configuração de Senha:** A senha para este usuário deve ser fornecida ao servidor de aplicação (Wildfly 20) como um parâmetro JVM Option.
 - **Métodos de Configuração:**
-    - **Arquivo de Configuração:** Adicione a propriedade `IncowayPw` ao arquivo de configuração XML do Wildfly.
-    - **Linha de Comando:** Inicie a JVM com o parâmetro: `-DIncowayPw=sua_senha`.
-- **Finalidade:** Esta conta é essencial para a lógica interna da aplicação, suportando toda a busca de dados da interface e salvando as informações inseridas pelos fornecedores logados.
+    - **Arquivo de Configuração:** Adicione a propriedade `IncowayPw` ao arquivo de configuração XML do Wildfly 20.
+    - **Linha de Comando:** Inicie a JVM que roda o Wildfly com o parâmetro: `-DIncowayPw=sua_senha`.
+- **Finalidade:** Esta conta é essencial para a lógica interna da aplicação IwQuotation, suportando toda a busca de dados da interface e também o salvamento das informações inseridas nas telas do IwQuotation.
